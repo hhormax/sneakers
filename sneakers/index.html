@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet"
+        type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Marquiz script start -->
+    <!-- <script>
+        (function (w, d, s, o) {
+            var j = d.createElement(s); j.async = true; j.src = '//script.marquiz.ru/v2.js'; j.onload = function () {
+                if (document.readyState !== 'loading') Marquiz.init(o);
+                else document.addEventListener("DOMContentLoaded", function () {
+                    Marquiz.init(o);
+                });
+            };
+            d.head.insertBefore(j, d.head.firstElementChild);
+        })(window, document, 'script', {
+            host: '//quiz.marquiz.ru',
+            region: 'ru',
+            id: '6743728cb3ced500263355d9',
+            autoOpen: 30,
+            autoOpenFreq: 'once',
+            openOnExit: false,
+            disableOnMobile: false
+        }
+        );
+    </script> -->
+    <!-- Marquiz script end -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .swiper {
+            width: 90%;
+            padding: 50px 0;
+            position: relative;
+            margin-top: 110px;
+        }
+
+        .swiper-wrapper {
+            display: flex;
+            align-items: center;
+            height: 400px;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(#3C3F4C, #222222);
+            color: #fff;
+            border-radius: 15px;
+            box-shadow: 0px 8px 8px #00000040;
+            height: 300px;
+            transition: all 0.5s ease;
+        }
+
+        .swiper-slide-active {
+            background-image: linear-gradient(#3C3F4C, #222222);
+            box-shadow: 0px 8px 8px #00000040;
+            height: 400px;
+        }
+
+        .swiper-slide h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .swiper-slide p {
+            font-size: 16px;
+            text-align: center;
+            line-height: 1.5;
+            margin: 0 10px;
+        }
+
+        .swiper_buttons {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            pointer-events: none;
+            z-index: 10;
+            transform: translateY(-50%);
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            background: linear-gradient(90deg, #FFA45C, #FF7100);
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: all;
+            z-index: 10;
+            transition: transform 0.3s ease;
+        }
+
+        .swiper-button-prev {
+            left: calc(50% - 320px);
+        }
+
+        .swiper-button-next {
+            right: calc(50% - 320px);
+        }
+
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            transform: translateY(-50%) scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="container_wrapper">
+                <div class="header_wrapper">
+                    <div class="logo">
+                        <img src="./img/logo.png" alt="logo">
+                        <div class="logo-txt">
+                            <div class="txt-1">Big Family</div>
+                            <div class="txt-2">Studio</div>
+                        </div>
+                    </div>
+                    <div class="navbar">
+                        <ul class="links">
+                            <a href="#sec_6" class="link1">Услуги</a>
+                            <a href="#sec_4" class="link2">Доставка</a>
+                            <a href="#sec_7" class="link3">Консультация</a>
+                            <a href="#sec_10" class="link4">Адрес</a>
+                        </ul>
+                    </div>
+                </div>
+                <div class="networks">
+                    <img src="./img/inst.png" alt="instagram">
+                    <img src="./img/telegram.png" alt="telegram">
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="sec_1">
+        <div class="container">
+            <div class="sec_1_title">ХИМЧИСТКА ОБУВИ</div>
+            <div class="sec_1_text">Бесплатно заберем из дома и привезем чистыми</div>
+            <button class="sec_1_button">Почистить обувь</button>
+        </div>
+        <div class="sec_1_img">
+            <div class="sneakers_img_1">
+                <img src="./img/sneakers1.png">
+            </div>
+        </div>
+    </section>
+    <section class="sec_2">
+        <div class="container">
+            <div class="sec_2_title">ПОЧЕМУ МЫ?</div>
+            <ul class="sec_2_cells">
+                <li class="sec_2_cell">
+                    <div class="sec_2_cell_content">
+                        <img src="./img/img1.png" alt="img1">
+                        <div class="sec_2_cell-text">Гарантия
+                            результата</div>
+                    </div>
+                </li>
+                <li class="sec_2_cell">
+                    <div class="sec_2_cell_content"></div>
+                    <img src="./img/img2.png" alt="img2">
+                    <div class="sec_2_cell-text">Индивидуальный
+                        подход</div>
+                </li>
+                <li class="sec_2_cell">
+                    <div class="sec_2_cell_content">
+                        <img src="./img/img3.png" alt="img3">
+                        <div class="sec_2_cell-text">Восстановили
+                            >50.000 пар</div>
+                    </div>
+                </li>
+                <li class="sec_2_cell">
+                    <div class="sec_2_cell_content">
+                        <img src="./img/img4.png" alt="img4">
+                        <div class="sec_2_cell-text">Лучшая обувная
+                            косметика</div>
+                    </div>
+                </li>
+                <li class="sec_2_cell">
+                    <div class="sec_2_cell_content">
+                        <img src="./img/img5.png" alt="img5">
+                        <div class="sec_2_cell-text">Быстрые
+                            сроки</div>
+                    </div>
+                </li>
+                <li class="sec_2_cell">
+                    <div class="sec_2_cell_content">
+                        <img src="./img/img6.png" alt="img6">
+                        <div class="sec_2_cell-text">Бесплатная
+                            доставка</div>
+                    </div>
+                </li>
+            </ul>
+            <div class="sec_2_wrapper_button">
+                <button class="sec_2_button">Рассчитать стоимость</button>
+            </div>
+        </div>
+    </section>
+    <section class="sec_3">
+        <div class="container">
+            <div class="sec_3-wrapper">
+                <div class="sec_3_left">
+                    <div class="sec_3_left-title">ЭТАПЫ ЧИСТКИ</div>
+                    <div class="sec3_left-block-1">
+                        <div class="sec3_left-block-number">01</div>
+                        <div class="sec3_left-block-title">Консультация и оценка</div>
+                        <div class="sec3_left-block-text">Вы оставляете заявку на сайте или звоните нам. Наш специалист
+                            связывается с вами для консультации, оценивает состояние вашей обуви и дает предварительную
+                            оценку стоимости и сроков выполнения работы.</div>
+                    </div>
+                    <div class="sec3_left-block-2">
+                        <div class="sec3_left-block-number">03</div>
+                        <div class="sec3_left-block-title">Согласование с технологом</div>
+                        <div class="sec3_left-block-text">По прибытии в нашу мастерскую, обувь осматривает технолог. Мы
+                            уточняем детали чистки, методы и средства, которые будут использованы, и связываемся с вами
+                            для окончательного согласования.</div>
+                    </div>
+                </div>
+                <div class="sec_3_orange_line">ХИМЧИСТКА ОБУВИ • ПОКРАСКА И РЕСТАВРАЦИЯ • ДОСТАВКА НА ДОМ • РЕМОНТ</div>
+                <div class="sec_3_right">
+                    <div class="sec3_right-block-1">
+                        <div class="sec3_right-block-number">02</div>
+                        <div class="sec3_right-block-title">Удобный забор обуви</div>
+                        <div class="sec3_right-block-text">Мы забираем вашу обувь в удобное для вас время и место. Вам
+                            не нужно никуда ехать – наш курьер приедет к вам домой или в офис.</div>
+                    </div>
+                    <div class="sec3_right-block-2">
+                        <div class="sec3_right-block-number">04</div>
+                        <div class="sec3_right-block-title">Чистка и доставка</div>
+                        <div class="sec3_right-block-text">После согласования, наши специалисты проводят
+                            профессиональную чистку и уход за вашей обувью. Как только работа завершена, мы аккуратно
+                            упаковываем обувь и доставляем её обратно в удобное для вас время.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="sec_4" class="sec_4">
+        <div class="container sec_4_container_wrapper">
+            <div class="sec_4_title">Бесплатная доставка</div>
+            <div class="sec_4_text">Экономьте время! Мы приедем в любую точку Минска и заберем вашу обувь.</div>
+            <button class="sec_4_button">Вызвать курьера</button>
+            <div class="sneakers_img_2">
+                <img src="./img/sneakers2.png">
+            </div>
+        </div>
+    </section>
+    <section class="sec_5">
+        <div class="container">
+            <div class="sec_5_title">Примеры того, что<br>мы делаем</div>
+            <div class="sec_5_text">Мы очищаем кроссовки от стойких загрязнений, восстанавливаем свежесть замшевых
+                ботинок и возвращаем блеск кожаным туфлям. Ваши любимые пары снова будут выглядеть как новые!</div>
+            <div class="sec_5_sliders">
+                <div class="sec_5_sliders_slider_1">
+                    <div class="sl-container">
+                        <div class="view view-before">
+                            <img src="./img/slider12.png" />
+                        </div>
+                        <div class="view view-after">
+                            <img src="./img/slider11.png" />
+                        </div>
+                        <div class="dragme">
+                            <div class="dr-circle"><i class="fa fa-arrows-h" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="sec_5_prev_after">
+                            <div class="sec_5_prev">До</div>
+                            <div class="sec_5_after">После</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="sec_5_sliders_slider_2">
+                    <div class="sl-container">
+                        <div class="view view-before">
+                            <img src="./img/slider22.png" />
+                        </div>
+                        <div class="view view-after">
+                            <img src="./img/slider21.png" />
+                        </div>
+                        <div class="dragme">
+                            <div class="dr-circle"><i class="fa fa-arrows-h" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="sec_5_prev_after">
+                            <div class="sec_5_prev">До</div>
+                            <div class="sec_5_after">После</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sec_5_sliders_slider_3">
+                    <div class="sl-container">
+                        <div class="view view-before">
+                            <img src="./img/slider32.png" />
+                        </div>
+                        <div class="view view-after">
+                            <img src="./img/slider31.png" />
+                        </div>
+                        <div class="dragme dragme_3">
+                            <div class="dr-circle"><i class="fa fa-arrows-h" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="sec_5_prev_after">
+                            <div class="sec_5_prev">До</div>
+                            <div class="sec_5_after">После</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="sec_6" class="sec_6">
+        <div class="container">
+            <div class="sec_6_title">НАШИ ЦЕНЫ И УСЛУГИ</div>
+            <div class="sec_6_content">
+                <div class="sec_6_content_1">
+                    <div class="sec_6_content_1_img">
+                        <div class="sec_6_content_1_img_text">Чистка</div>
+                    </div>
+                    <div class="sec_6_content_price">от 70 BYN</div>
+                    <button class="sec_6_content_button">Заказать</button>
+                </div>
+                <div class="sec_6_content_2">
+                    <div class="sec_6_content_2_img">
+                        <div class="sec_6_content_2_img_text">Покраска</div>
+                    </div>
+                    <div class="sec_6_content_price">от 110 BYN</div>
+                    <button class="sec_6_content_button">Заказать</button>
+                </div>
+                <div class="sec_6_content_3">
+                    <div class="sec_6_content_3_img">
+                        <div class="sec_6_content_3_img_text">Ремонт</div>
+                    </div>
+                    <div class="sec_6_content_price">от 120 BYN</div>
+                    <button class="sec_6_content_button">Заказать</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="sec_7" class="sec_7">
+        <div class="container sec_7_container_wrapper">
+            <div class="sec_7_title">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</div>
+            <div class="sec_7_text">Заполните анкету ниже для получения индивидуальной консультации,
+                и мы с вами свяжемся</div>
+            <div class="sec_7_content">
+                <input class="sec_7_input" type="text" placeholder="Имя">
+                <input class="sec_7_input" type="text" placeholder="+375 (99) 999-99-99">
+                <button class="sec_7_button">Свяжитесь со мной</button>
+            </div>
+            <div class="sec_7_img">
+                <img src="./img/sneakers3.png">
+            </div>
+        </div>
+    </section>
+    <section class="sec_8">
+        <div class="container">
+            <div class="sec_8_title">О НАС ГОВОРЯТ</div>
+        </div>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div>
+
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="swiper_buttons">
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+    <section class="sec_9">
+        <div class="container">
+            <div class="sec_9_title">У ВАС ОСТАЛИСЬ ВОПРОСЫ?</div>
+            <div class="sec_9_text">Если у вас остались вопросы, ответы на них можно найти<br>
+                в приведенном ниже списке</div>
+            <div class="sec_9_content">
+                <div class="sec_9_content_1">
+                    <div class="sec_9_content_title">Какие способы оплаты?</div>
+                    <button class="sec_9_content_button">
+                        <img src="./img/plus.png" alt="img">
+                    </button>
+                </div>
+                <div class="sec_9_content_2">
+                    <div class="sec_9_content_title">Куда привезти?</div>
+                    <button class="sec_9_content_button">
+                        <img src="./img/plus.png" alt="img">
+                    </button>
+                </div>
+                <div class="sec_9_content_3">
+                    <div class="sec_9_content_title">Сколько времени занимает чистка?</div>
+                    <button class="sec_9_content_button">
+                        <img src="./img/plus.png" alt="img">
+                    </button>
+                </div>
+                <button class="sec_9_button">Больше вопросов</button>
+            </div>
+        </div>
+    </section>
+    <section id="sec_10" class="sec_10">
+        <div class="container">
+            <div class="sec_10_title">ГДЕ НАС НАЙТИ?</div>
+            <div class="sec_10_content">
+                <div class="sec_10_content_info">
+                    <div class="sec_10_content_text_1">
+                        <div class="sec_10_content_text">Адрес</div>
+                        <div class="sec_10_content_text_info">ул.Кальварийская, 21, пом.100<br>Минск, Беларусь</div>
+                    </div>
+                    <div class="sec_10_content_text_2">
+                        <div class="sec_10_content_text">Контакты</div>
+                        <div class="sec_10_content_text_info">+375(29)304-15-89<br>BF@studio.com</div>
+                    </div>
+                    <div class="sec_10_content_text_3">
+                        <div class="sec_10_content_text">Время работы</div>
+                        <div class="sec_10_content_text_info">Пн-Чт: 00:00-00:00<br>Пт: 00:00-00:00</div>
+                    </div>
+                </div>
+                <div class="sec_10_content_map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.643692237953!2d27.52687758807411!3d53.9055868539085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcff694235e89%3A0x488908b95d98ca72!2z0YPQuy4g0JrQsNC70YzQstCw0YDQuNC50YHQutCw0Y8gMjEsINCc0LjQvdGB0LosINCc0LjQvdGB0LrQsNGPINC-0LHQu9Cw0YHRgtGM!5e1!3m2!1sru!2sby!4v1734362065955!5m2!1sru!2sby"
+                        width="600" height="490"
+                        style="border:0;  border-top-right-radius: 15px; border-bottom-right-radius: 15px;"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer_container_wrapper">
+                <div class="footer_logo">
+                    <div class="footer_logo-txt">
+                        <div class="footer_txt-1">Big Family</div>
+                        <div class="footer_txt-2">Studio</div>
+                    </div>
+                    <img class="footer_logo_img" src="./img/logo.png" alt="logo">
+                </div>
+                <div class="footer_container_wrapper_service">
+                    <div class="footer_container_wrapper_service_header">Сервис</div>
+                    <div class="footer_container_wrapper_service_link">Почему мы?</div>
+                    <div class="footer_container_wrapper_service_link">Этапы чистки</div>
+                    <div class="footer_container_wrapper_service_link">Бесплатная доставка</div>
+                    <div class="footer_container_wrapper_service_link">Примеры</div>
+                    <div class="footer_container_wrapper_service_link">Отзывы</div>
+                </div>
+                <div class="footer_container_wrapper_help">
+                    <div class="footer_container_wrapper_help_header">Помощь</div>
+                    <div class="footer_container_wrapper_help_link">Вопросы</div>
+                    <div class="footer_container_wrapper_help_link">Консультация</div>
+                    <div class="footer_container_wrapper_help_link">Где нас найти?</div>
+                </div>
+                <div class="footer_container_wrapper_contacts">
+                    <div class="footer_container_wrapper_contacts_header">Контакты</div>
+                    <div class="footer_container_wrapper_contacts_link">+375(29)304-15-89</div>
+                    <div class="footer_container_wrapper_contacts_link">BF@studio.com</div>
+                    <div class="footer_container_wrapper_contacts_link">
+                        <img src="./img/inst.png" alt="instagram">
+                        <div class="footer_container_wrapper_contacts_3_text">Bigfamily_studio</div>
+                    </div>
+                    <div class="footer_container_wrapper_contacts_link">
+                        <img src="./img/telegram.png" alt="telegram">
+                        <div class="footer_container_wrapper_contacts_3_text">Telegram</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 85,
+            centeredSlides: true,
+            grabCursor: true,
+            loop: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            speed: 800,
+        });
+    </script>
+</body>
+
+</html>
